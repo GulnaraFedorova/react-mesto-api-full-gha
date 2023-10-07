@@ -1,0 +1,15 @@
+.profile__title-add {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  width: 336px;
+}
+
+@media screen and (max-width: 375px) {
+  .profile__title-add {
+    width: 262px;
+    gap: 10px;
+    padding: 0 0 0 20px;
+    justify-content: center;
+  }
+}

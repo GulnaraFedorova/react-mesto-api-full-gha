@@ -1,0 +1,16 @@
+.elements__like {
+  border: none;
+  align-self: center;
+  background-color: #ffffff00;
+  background-image: url(../../../images/Vector_element.svg);
+  width: 22px;
+  height: 19px;
+  padding: 0;
+  display: flex;
+  flex-shrink: 0;
+}
+
+.elements__like:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}

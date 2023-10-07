@@ -1,0 +1,9 @@
+.elements__title {
+  display: flex;
+  background-color: #fff;
+  width: calc(282px - 43px);
+  padding: 25px 21px 25px;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  justify-content: space-between;
+}

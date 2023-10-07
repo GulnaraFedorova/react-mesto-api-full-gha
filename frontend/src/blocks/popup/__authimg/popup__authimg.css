@@ -1,0 +1,12 @@
+.popup__authimg {
+  margin: 20px 0 30px;
+  width: 120px;
+  height: 120px;
+  align-self: center;
+}
+
+@media screen and (max-width: 580px) {
+  .popup__authimg {
+    margin: 50px 0 0;
+  }
+}

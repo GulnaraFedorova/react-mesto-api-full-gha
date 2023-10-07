@@ -1,0 +1,15 @@
+.popup__button_type_error {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: center;
+  color: #000000;
+  opacity: 0.2;
+  background-color: #fff;
+  border: 1px solid #000;
+  cursor: default;
+}
+.popup__button_type_error:hover {
+  background-color: rgb(255, 255, 255);
+}
