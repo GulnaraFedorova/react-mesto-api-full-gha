@@ -35,7 +35,8 @@ function App() {
 
   useEffect(() => {
     if (isLoggedIn) {
-      Promise.all([api.getUser(), api.getCards()])
+      const jwt = localStorage.getItem("jwt");
+      Promise.all([api.getUser(jwt), api.getCards(jwt)])
         .then(([data, cards]) => {
           setCurrentUser(data);
           setInitialCards(cards);
@@ -71,9 +72,10 @@ function App() {
   }, []);
 
   function handleCardLike(card) {
-    const isLiked = card.likes.some((item) => item._id === currentUser._id);
+    const isLiked = card.likes.some(id => id === currentUser._id);
+    const jwt = localStorage.getItem("jwt");
     api
-      .toggleLike(card._id, isLiked)
+      .toggleLike(card._id, isLiked, jwt)
       .then((newCard) => {
         setInitialCards((state) =>
           state.map((c) => (c._id === card._id ? newCard : c)),
@@ -84,8 +86,9 @@ function App() {
       );
   }
   function handleCardDelete(card) {
+    const jwt = localStorage.getItem("jwt");
     api
-      .deleteCard(card._id)
+      .deleteCard(card._id, jwt)
       .then(() => {
         setInitialCards((state) => state.filter((res) => res._id !== card._id));
         setIsRemovalPopupOpen(true)
@@ -93,8 +96,9 @@ function App() {
       .catch((error) => console.error(`Ошибка в удалении карточки ${error}`));
   }
   function handleUpdateUser(data) {
+    const jwt = localStorage.getItem("jwt");
     api
-      .updateProfileInfo(data)
+      .updateProfileInfo(data, jwt)
       .then((res) => {
         setCurrentUser(res);
         closeAllPopups();
@@ -105,8 +109,9 @@ function App() {
   }
 
   function handleUpdateAvatar(data) {
+    const jwt = localStorage.getItem("jwt");
     api
-      .updateAvatar(data)
+      .updateAvatar(data, jwt)
       .then((res) => {
         setCurrentUser(res);
         closeAllPopups();
@@ -115,8 +120,9 @@ function App() {
   }
 
   function handleAddPlaceSubmit({ name, link }) {
+    const jwt = localStorage.getItem("jwt");
     api
-      .addCard(name, link)
+      .addCard(name, link, jwt)
       .then((res) => {
         setInitialCards([res, ...cards]);
         closeAllPopups();
@@ -135,7 +141,7 @@ function App() {
           if (!data) {
             return;
           }
-          setUserData(data.data.email);
+          setUserData(data.email);
           setIsLoggedIn(true);
           navigate("/");
         })

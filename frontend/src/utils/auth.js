@@ -1,4 +1,4 @@
-const BASEURL = "https://auth.nomoreparties.co";
+const BASEURL = "http://localhost:4000";
 
 //проверка на ошибки
 const _checkResponse = (res) => {
@@ -30,6 +30,7 @@ export const userAuthorization = (email, password) => {
     body: JSON.stringify({ email, password }),
   }).then(_checkResponse);
 };
+
 //запрос проверки валидности токен
 export const tokenValidation = (token) => {
   return fetch(`${BASEURL}/users/me`, {
