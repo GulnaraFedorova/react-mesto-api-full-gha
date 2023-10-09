@@ -96,5 +96,6 @@ class Api {
 }
 
 export const api = new Api({
-  url: "http://localhost:4000",
+  //url: "http://localhost:4000",
+  url: "https://api.mesto.melograno.nomoredomainsrocks.ru",
 });
