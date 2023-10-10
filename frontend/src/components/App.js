@@ -155,7 +155,7 @@ function App() {
   useEffect(() => {
     chekToken();
   }, []);
-/*
+
   if (isLoggedIn === null) {
     return (
       <div className="loading">
@@ -163,7 +163,7 @@ function App() {
         <p className="loading__text">Loading</p>
       </div>
     );
-  }*/
+  }
 
   const handleRegister = (email, password) => {
     auth
