@@ -1,5 +1,5 @@
-const BASEURL = "http://localhost:3000";
-//const BASEURL = "https://api.mesto.melograno.nomoredomainsrocks.ru";
+// const BASEURL = "http://localhost:3000";
+const BASEURL = "https://api.mesto.melograno.nomoredomainsrocks.ru";
 
 //проверка на ошибки
 const _checkResponse = (res) => {
