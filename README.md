@@ -7,7 +7,7 @@
 
 ## Ссылки на проект
 
-IP-адрес 84.201.128.38
+IP-адрес <84.201.128.38>
 
 Frontend https://mesto.melograno.nomoredomainsrocks.ru
 
