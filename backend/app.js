@@ -9,12 +9,12 @@ const { PORT = 4000, DB_URL = 'mongodb://localhost:27017/mestodb' } = process.en
 const app = express();
 
 const { errors } = require('celebrate');
+const rateLimit = require('express-rate-limit');
 const users = require('./routes/users');
 const cards = require('./routes/cards');
 const auth = require('./middlewares/auth');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 const NotFoundError = require('./errors/NotFoundError');
-const rateLimit = require('express-rate-limit');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));

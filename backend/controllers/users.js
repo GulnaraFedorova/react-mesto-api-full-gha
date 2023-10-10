@@ -5,6 +5,7 @@ const User = require('../models/user');
 const ConflictError = require('../errors/ConflictError');
 const ValidationError = require('../errors/ValidationError');
 const NotFoundError = require('../errors/NotFoundError');
+
 const { SECRET_KEY = 'yandex' } = process.env;
 
 module.exports.addUser = (req, res, next) => {
