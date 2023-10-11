@@ -91,7 +91,7 @@ function App() {
       .deleteCard(card._id, jwt)
       .then(() => {
         setInitialCards((state) => state.filter((res) => res._id !== card._id));
-        setIsRemovalPopupOpen(true)
+        //setIsRemovalPopupOpen(true)
       })
       .catch((error) => console.error(`Ошибка в удалении карточки ${error}`));
   }
@@ -163,7 +163,7 @@ function App() {
         <p className="loading__text">Loading</p>
       </div>
     );
-  }*/
+  }*/ 
 
   const handleRegister = (email, password) => {
     auth
@@ -261,7 +261,7 @@ function App() {
           buttonText="Да"
           isOpen={isRemovalPopupOpen}
           onClose={closeAllPopups}
-          onClicDelete={handleCardDelete}
+          onSubmit={handleCardDelete}
         ></PopupWithForm>
 
         <ImagePopup
